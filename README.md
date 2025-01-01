@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: anywhere-door-manager-webui-deployment
-  namespace: anywhere-door-webui
+  namespace: anywhere-door
 spec:
   replicas: 1
   selector:
