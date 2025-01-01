@@ -61,9 +61,7 @@ export default function Login({ setIsLogin } : {setIsLogin: (value: boolean) => 
                 注册&登录
             </button>
             {
-                tips !== '' && (
-                    <label className="block text-red-700 text-sm font-bold mb-2"
-                           htmlFor="password">登录错误: {tips}</label>)
+                tips !== '' && (<label className="block text-red-700 text-sm font-bold mb-2">登录错误: {tips}</label>)
             }
         </div>
     </>)

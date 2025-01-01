@@ -1,5 +1,5 @@
-import './App.css'
-import { useState } from 'react'
+import "./App.css";
+import { useState } from "react";
 import Login from "./page/Login.tsx";
 import Operator from "./page/Operator.tsx";
 import axios from "./axios.ts";
