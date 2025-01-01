@@ -29,7 +29,7 @@ COPY vite.config.ts /ws/code
 
 RUN npm i
 
-RUM npm run build
+RUN npm run build
 
 COPY nginx.conf /etc/nginx/
 
