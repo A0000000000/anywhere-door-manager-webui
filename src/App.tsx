@@ -6,7 +6,11 @@ import axios from "./axios.ts";
 
 function App() {
     const [isLogin, setIsLogin] = useState(false)
-    checkLocalStatus().then(setIsLogin)
+    const [firstLoad, setFirstLoad] = useState(true)
+    if (firstLoad) {
+        checkLocalStatus().then(setIsLogin)
+        setFirstLoad(false)
+    }
     return (
         <>
             <h1>AnywhereDoor</h1>
