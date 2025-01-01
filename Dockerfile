@@ -35,4 +35,4 @@ COPY nginx.conf /etc/nginx/
 
 EXPOSE 80
 
-ENTRYPOINT ["sed -i 's/$HOST/'$HOST'/g' /etc/nginx/nginx.conf && sed -i 's/$PORT/'$PORT'/g' /etc/nginx/nginx.conf && sed -i 's/$PREFIX/'$PREFIX'/g' /etc/nginx/nginx.conf && ", "nginx -g 'daemon off;'"]
+ENTRYPOINT ["sed -i 's/$ADDRESS/'$HOST':'$PORT''$PREFIX'/g' /etc/nginx/nginx.conf && nginx -g 'daemon off;'"]
