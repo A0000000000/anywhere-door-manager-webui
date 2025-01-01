@@ -33,6 +33,11 @@ RUN npm run build
 
 COPY nginx.conf /etc/nginx/
 
+WORKDIR /ws
+COPY main.sh /ws/
+
+RUN chmod +x main.sh
+
 EXPOSE 80
 
-ENTRYPOINT ["sed -i 's/$ADDRESS/'$HOST':'$PORT''$PREFIX'/g' /etc/nginx/nginx.conf && nginx -g 'daemon off;'"]
+ENTRYPOINT ["/bin/bash", "main.sh"]
