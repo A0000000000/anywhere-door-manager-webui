@@ -27,8 +27,8 @@ export default function ConfigDetailPage({
                 className="mb-4 w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500"
             />
 
-            <input
-                type="text"
+            <textarea
+                rows={10}
                 value={currentConfig.config_value}
                 placeholder="配置值"
                 onChange={(e) => {
