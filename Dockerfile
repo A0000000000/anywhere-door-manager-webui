@@ -14,12 +14,17 @@ ENV PATH=$PATH:$NODE_HOME/bin
 
 WORKDIR /ws/code
 
+COPY nginx.conf /etc/nginx/
+
+COPY package.json /ws/code
+COPY package-lock.json /ws/code
+
+RUN npm i
+
 COPY public /ws/code/public
 COPY src /ws/code/src
 COPY eslint.config.js /ws/code
 COPY index.html /ws/code
-COPY package.json /ws/code
-COPY package-lock.json /ws/code
 COPY postcss.config.js /ws/code
 COPY tailwind.config.js /ws/code
 COPY tsconfig.app.json /ws/code
@@ -27,11 +32,8 @@ COPY tsconfig.json /ws/code
 COPY tsconfig.node.json /ws/code
 COPY vite.config.ts /ws/code
 
-RUN npm i
-
 RUN npm run build
 
-COPY nginx.conf /etc/nginx/
 
 WORKDIR /ws
 COPY main.sh /ws/
